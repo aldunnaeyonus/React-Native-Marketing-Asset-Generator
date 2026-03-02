@@ -1,16 +1,19 @@
 # React-Native-Marketing-Asset-Generator
 
-CyberMockup Pro (2026 Edition)
+##CyberMockup Pro (2026 Edition)
 A high-performance React Native Skia engine for generating cinematic, cyberpunk-style marketing assets directly from your mobile device. This tool transforms standard app screenshots into 3D-perspective mockups with neon HUD elements and professional lighting.
+
 🚀 Features
 3D Perspective Engine: Uses Matrix4 transformations to tilt device frames for a modern, non-flat aesthetic.
 Neon Bloom Lighting: Layered BlurMask effects that simulate light emission from the device.
 Dynamic Typography: Automatic text centering using Skia’s measureText for pixel-perfect alignment.
 Holographic HUD: Cyber-grid background and glassmorphism overlays with LinearGradient reflections.
 Batch Export: Automated loop that renders, snapshots, and saves high-res JPEGs to the system gallery.
+
 📦 Installation
 Ensure you have an Expo project set up, then install the required graphics and file system dependencies: 
 bash
+
 npx expo install @shopify/react-native-skia expo-file-system expo-media-library
 Use code with caution.
 
@@ -45,6 +48,7 @@ Use code with caution.
 
 2. Implementation
 Import the MarketingExportManager into your main screen. The component renders off-screen (opacity 0) to allow for background processing without interrupting the UI.
+
 tsx
 import { MarketingExportManager } from './MarketingGenerator';
 
@@ -69,6 +73,7 @@ Use code with caution.
 Physical Devices: Use a physical iOS or Android device for the Expo MediaLibrary to work correctly.
 Permissions: Ensure you have granted "Photos" access when prompted.
 Snapshot Timing: The export includes a 1000ms delay per asset to ensure the GPU has fully rendered the Skia canvas before the snapshot is taken. 
+
 🎨 Customization
 Tilt Angle: Modify rotateY(0.15) in the perspectiveMatrix to change the 3D skew.
 Grid Density: Change the Array(20) loop in the background section to increase or decrease the cyber-grid lines.
